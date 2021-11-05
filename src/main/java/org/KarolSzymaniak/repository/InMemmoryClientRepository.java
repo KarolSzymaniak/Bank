@@ -1,6 +1,6 @@
-package KarolSzymaniak.org.repository;
+package org.KarolSzymaniak.repository;
 
-import KarolSzymaniak.org.Client;
+import org.KarolSzymaniak.Client;
 
 import java.util.Set;
 

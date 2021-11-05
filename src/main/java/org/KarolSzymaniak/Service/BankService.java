@@ -1,7 +1,7 @@
-package KarolSzymaniak.org.Service;
+package org.KarolSzymaniak.Service;
 
-import KarolSzymaniak.org.Client;
-import KarolSzymaniak.org.repository.ClientRepository;
+import org.KarolSzymaniak.Client;
+import org.KarolSzymaniak.repository.ClientRepository;
 
 import java.util.Objects;
 

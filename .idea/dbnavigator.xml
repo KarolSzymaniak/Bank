@@ -69,7 +69,7 @@
           <description value="postgres" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="14.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -79,7 +79,7 @@
           <database value="postgres" />
           <type value="USER_PASSWORD" />
           <user value="postgres" />
-          <deprecated-pwd value="" />
+          <deprecated-pwd value="aEBzbG9zejE=" />
         </database>
         <properties>
           <auto-commit value="false" />

@@ -1,4 +1,4 @@
-package KarolSzymaniak.org;
+package org.KarolSzymaniak;
 
 import javax.persistence.*;
 import java.util.Objects;

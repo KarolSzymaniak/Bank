@@ -1,10 +1,9 @@
-import KarolSzymaniak.org.Client;
-import KarolSzymaniak.org.Service.BankService;
-import KarolSzymaniak.org.repository.ClientRepository;
-import KarolSzymaniak.org.repository.InMemmoryClientRepository;
-import KarolSzymaniak.org.repository.JDBCClientRepository;
+import org.KarolSzymaniak.Client;
+import org.KarolSzymaniak.Service.BankService;
+import org.KarolSzymaniak.repository.ClientRepository;
+import org.KarolSzymaniak.repository.HibernateClientRepository;
+import org.KarolSzymaniak.repository.JDBCClientRepository;
 
-import java.util.HashSet;
 import java.util.Scanner;
 
     public class Main {
@@ -21,8 +20,8 @@ import java.util.Scanner;
 
         public void run(){
              //InMemmoryClientRepository repository = new InMemmoryClientRepository(new HashSet<>());
-            ClientRepository repository = new JDBCClientRepository();
-           // ClientRepository repository = new HibernateClientRepository();
+            //ClientRepository repository = new JDBCClientRepository();
+            ClientRepository repository = new HibernateClientRepository();
             bankService = new BankService(repository);
 
             try(Scanner scanner = new Scanner(System.in)) {
