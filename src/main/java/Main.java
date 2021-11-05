@@ -2,6 +2,7 @@ import KarolSzymaniak.org.Client;
 import KarolSzymaniak.org.Service.BankService;
 import KarolSzymaniak.org.repository.ClientRepository;
 import KarolSzymaniak.org.repository.InMemmoryClientRepository;
+import KarolSzymaniak.org.repository.JDBCClientRepository;
 
 import java.util.HashSet;
 import java.util.Scanner;
@@ -19,8 +20,8 @@ import java.util.Scanner;
 
 
         public void run(){
-             InMemmoryClientRepository repository = new InMemmoryClientRepository(new HashSet<>());
-            //ClientRepository repository = new JDBCClientRepository();
+             //InMemmoryClientRepository repository = new InMemmoryClientRepository(new HashSet<>());
+            ClientRepository repository = new JDBCClientRepository();
            // ClientRepository repository = new HibernateClientRepository();
             bankService = new BankService(repository);
 
