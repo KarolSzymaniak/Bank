@@ -1,14 +1,13 @@
-package org.KarolSzymaniak;
+package org.KarolSzymaniak.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "USERS")
-
 public class Client {
     @Id
-    @GeneratedValue
+    //@GeneratedValue
     @Column(name = "USER_ID")
     private Long id;
     @Column(name = "FIRST_NAME")

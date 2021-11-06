@@ -1,6 +1,6 @@
 package org.KarolSzymaniak.repository;
 
-import org.KarolSzymaniak.Client;
+import org.KarolSzymaniak.entity.Client;
 
 public interface ClientRepository {
 

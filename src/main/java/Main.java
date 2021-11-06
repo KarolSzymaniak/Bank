@@ -1,7 +1,6 @@
-import org.KarolSzymaniak.Client;
+import org.KarolSzymaniak.entity.Client;
 import org.KarolSzymaniak.Service.BankService;
 import org.KarolSzymaniak.repository.ClientRepository;
-import org.KarolSzymaniak.repository.HibernateClientRepository;
 import org.KarolSzymaniak.repository.JDBCClientRepository;
 
 import java.util.Scanner;
@@ -9,19 +8,15 @@ import java.util.Scanner;
     public class Main {
 
         private BankService bankService;
-
         public static void main(String[] args) {
 
             new Main().run();
         }
 
-
-
-
         public void run(){
              //InMemmoryClientRepository repository = new InMemmoryClientRepository(new HashSet<>());
-            //ClientRepository repository = new JDBCClientRepository();
-            ClientRepository repository = new HibernateClientRepository();
+            ClientRepository repository = new JDBCClientRepository();
+            //ClientRepository repository = new HibernateClientRepository();
             bankService = new BankService(repository);
 
             try(Scanner scanner = new Scanner(System.in)) {
@@ -41,12 +36,12 @@ import java.util.Scanner;
                     }
                     if (next.equals("3")){
                         System.out.println("Wprowadz mail zleceniodawcy: ");
-                        String mail1 = scanner.next();
+                        String senderMail = scanner.next();
                         System.out.println("Wprowadz mail zleceniobiorcy: ");
-                        String mail2 = scanner.next();
+                        String receiverMail = scanner.next();
                         System.out.println("Wprowadz kwotę: ");
                         double amountTransfer = scanner.nextDouble();
-                        bankService.transfer(mail1,mail2, amountTransfer);
+                        bankService.transfer(senderMail,receiverMail,amountTransfer);
                     }
                     if (next.equals("4")){
                         break;

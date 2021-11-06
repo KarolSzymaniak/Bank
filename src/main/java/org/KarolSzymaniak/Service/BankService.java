@@ -1,6 +1,6 @@
 package org.KarolSzymaniak.Service;
 
-import org.KarolSzymaniak.Client;
+import org.KarolSzymaniak.entity.Client;
 import org.KarolSzymaniak.repository.ClientRepository;
 
 import java.util.Objects;
@@ -10,6 +10,7 @@ import java.util.Objects;
         private ClientRepository clientRepository;
 
         public BankService(ClientRepository clientRepository) {
+
             this.clientRepository = clientRepository;
         }
 
@@ -18,13 +19,11 @@ import java.util.Objects;
             if (Objects.isNull(client.getName())){
                 throw new IllegalArgumentException("Imie nie może być puste ! ! !");
             }
+
             if (Objects.isNull(client.getEmail())){
                 throw new IllegalArgumentException("Email nie może być pusty ! ! !");
             }
 
-            if (clientRepository.findByEmail(client.getEmail())== null){
-                throw new IllegalArgumentException("Klient już istnieje");
-            }
             clientRepository.saveClient(client);
         }
 
